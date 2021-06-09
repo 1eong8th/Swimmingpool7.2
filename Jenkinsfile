@@ -22,7 +22,7 @@ pipeline {
         }
         stage('sonarqube-analysis') {
             environment {
-                SONAR_TOKEN = credentials('{7508a55bb3eb9cc448637d60cbd5ee6e786505b3}')
+                SONAR_TOKEN = credentials('sonarqube-token')
             }
             steps {
                 sh ''' ./gradlew sonarqube \
